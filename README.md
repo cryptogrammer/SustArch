@@ -1,1 +1,1 @@
-SustArch - A case of Watson used for biologically inspired sustainable architecutre design.
+SustArch - A case of Watson used for biologically inspired sustainable architecture design.
