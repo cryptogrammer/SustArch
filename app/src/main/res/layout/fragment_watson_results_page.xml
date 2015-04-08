@@ -1,0 +1,13 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.example.utkarshgagrg.sustarch.WatsonResultsPage$PlaceholderFragment">
+
+    <TextView android:text="Despite a lack of data, it is generally assumed that macrotermitid termites need to deal with overheating problems due to the high metabolism of the fungi and the termites (Darlington 1987, 1989; Weir 1973). In this context, ventilation of mounds was considered as a mechanism to dissipate excess metabolic heat (Collins 1979; Darlington 1987, 1989; Weir 1973; Schuurman and Dangerfield 1996; Noirot and Darlington 2000; Camazine et al. 2001).
+The data for M. bellicosus in the CNP show that macrotermitine species can have problems in keeping warm which, due to physiological constraints, has con-sequences for the fitness of the colonies and the distribution of the species. The high demand for heat, despite the extensive metabolic heat production, could be explained by the high heat capacities of the mounds (Korb and Linsenmair 1998b)." android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

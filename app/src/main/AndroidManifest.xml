@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.utkarshgagrg.sustarch" >
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -18,11 +20,27 @@
         </activity>
         <activity
             android:name=".WatsonQueryPage"
-            android:label="@string/title_activity_watson_query_page" >
+            android:label="@string/title_activity_watson_query_page"
+            android:parentActivityName=".LoginActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="LoginActivity" />
         </activity>
         <activity
             android:name=".WatsonResultsPage"
-            android:label="@string/title_activity_watson_results_page" >
+            android:label="@string/title_activity_watson_results_page"
+            android:parentActivityName=".WatsonQueryPage" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.utkarshgagrg.sustarch.WatsonQueryPage" />
+        </activity>
+        <activity
+            android:name=".UserProfilePage"
+            android:label="@string/title_activity_user_profile_page"
+            android:parentActivityName=".LoginActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="LoginActivity" />
         </activity>
     </application>
 

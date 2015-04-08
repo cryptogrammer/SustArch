@@ -13,19 +13,18 @@ import android.view.WindowManager;
 import android.widget.Button;
 
 
-public class LoginActivity extends Activity {
+public class UserProfilePage extends Activity {
 
-    Button loginButton;
-
+    Button navigateToWatsonButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-        loginButton = (Button) findViewById(R.id.loginButton);
-        loginButton.setOnClickListener(new View.OnClickListener() {
+        setContentView(R.layout.activity_user_profile_page);
+        navigateToWatsonButton = (Button) findViewById(R.id.navigateToWatson);
+        navigateToWatsonButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent watsonQueryPage = new Intent(v.getContext(), UserProfilePage.class);
+                Intent watsonQueryPage = new Intent(v.getContext(), WatsonQueryPage.class);
                 startActivity(watsonQueryPage);
             }
         });
@@ -36,13 +35,14 @@ public class LoginActivity extends Activity {
         window.setNavigationBarColor(getResources().getColor(R.color.navigationBarColor));
         ActionBar bar = getActionBar();
         bar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.actionBarColor)));
+
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_login, menu);
+        getMenuInflater().inflate(R.menu.menu_user_profile_page, menu);
         return true;
     }
 
