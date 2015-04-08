@@ -42,6 +42,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="LoginActivity" />
         </activity>
+        <activity
+            android:name=".DetailedAnswerView"
+            android:label="@string/title_activity_detailed_answer_view"
+            android:parentActivityName=".WatsonResultsPage" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.utkarshgagrg.sustarch.WatsonResultsPage" />
+        </activity>
     </application>
 
 </manifest>

@@ -19,6 +19,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -33,6 +34,7 @@ import java.io.UnsupportedEncodingException;
 import java.net.URL;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
+import java.util.ArrayList;
 
 import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLContext;
@@ -47,6 +49,7 @@ public class WatsonQueryPageFragment extends Fragment {
     private boolean mIsQuerying = false;
     private Button askWatsonButton;
     private EditText watsonQueryField;
+    private ArrayList<String> answersArrayList;
 
     private ProgressDialog dialog;
 
@@ -77,8 +80,13 @@ public class WatsonQueryPageFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 mWatsonQueryString = watsonQueryField.getText().toString();
-                WatsonQuery query = new WatsonQuery();
-                query.execute();
+                if(mWatsonQueryString.length()==0){
+                    Toast.makeText(getActivity(), "Please enter a valid query", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    WatsonQuery query = new WatsonQuery();
+                    query.execute();
+                }
 
             }
         });
@@ -180,11 +188,11 @@ public class WatsonQueryPageFragment extends Fragment {
         }
 
 
-
         @Override
         protected void onPostExecute(String json) {
             mIsQuerying = false;
             dialog.dismiss();
+            answersArrayList = new ArrayList<String>();
 
             try {
                 if(json != null) {
@@ -196,6 +204,13 @@ public class WatsonQueryPageFragment extends Fragment {
                     Log.i("ANSWER TEXT", mWatsonAnswerString);
                     //TextView textView = (TextView) getActivity().findViewById(R.id.watson_answer_text);
                     //textView.setText(mWatsonAnswerString);
+                    for(int i = 0; i < evidenceArray.length();++i){
+                        Log.i("ANSWER TEXT", evidenceArray.getJSONObject(i).get("text").toString());
+                        if(! answersArrayList.contains(evidenceArray.getJSONObject(i).get("text").toString())){
+                            answersArrayList.add(evidenceArray.getJSONObject(i).get("text").toString());
+                        }
+                        Log.i("ARRAYLIST SIZE", answersArrayList.size()+"");
+                    }
                 }
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -205,6 +220,7 @@ public class WatsonQueryPageFragment extends Fragment {
 
             Intent watsonResultsPage = new Intent(getActivity(), WatsonResultsPage.class);
             watsonResultsPage.putExtra("result", mWatsonAnswerString);
+            watsonResultsPage.putExtra("resultList", answersArrayList);
             startActivity(watsonResultsPage);
         }
 
