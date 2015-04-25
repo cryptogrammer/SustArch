@@ -58,6 +58,7 @@ public class WatsonQueryPageFragment extends Fragment {
     private WatsonQuery mQuery;
 
     public WatsonQueryPageFragment() {
+
     }
 
     @Override
@@ -92,6 +93,7 @@ public class WatsonQueryPageFragment extends Fragment {
         });
         return rootView;
     }
+
 
     private class WatsonQuery extends AsyncTask<Void, Integer, String> {
 
@@ -167,6 +169,7 @@ public class WatsonQueryPageFragment extends Fragment {
 
                             Log.i(mLogTag, "Watson Output: " + response.toString());
                             jsonData = response.toString();
+                            Log.i("JSON RESPONSE",jsonData);
 
                             break;
                         default:
@@ -200,6 +203,7 @@ public class WatsonQueryPageFragment extends Fragment {
                     JSONObject question = watsonResponse.getJSONObject("question");
                     JSONArray evidenceArray = question.getJSONArray("evidencelist");
                     JSONObject mostLikelyValue = evidenceArray.getJSONObject(0);
+                    Log.i("JSON STRING",mostLikelyValue.toString());
                     mWatsonAnswerString = mostLikelyValue.get("text").toString();
                     Log.i("ANSWER TEXT", mWatsonAnswerString);
                     //TextView textView = (TextView) getActivity().findViewById(R.id.watson_answer_text);

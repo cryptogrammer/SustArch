@@ -50,6 +50,30 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.utkarshgagrg.sustarch.WatsonResultsPage" />
         </activity>
+        <activity
+            android:name=".MarketPlace"
+            android:label="@string/title_activity_market_place"
+            android:parentActivityName=".UserProfilePage" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="UserProfilePage" />
+        </activity>
+        <activity
+            android:name=".AccountPage"
+            android:label="@string/title_activity_account_page"
+            android:parentActivityName=".UserProfilePage" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="UserProfilePage" />
+        </activity>
+        <activity
+            android:name=".SearchHistoryPage"
+            android:label="@string/title_activity_search_history_page"
+            android:parentActivityName=".UserProfilePage" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="UserProfilePage" />
+        </activity>
     </application>
 
 </manifest>

@@ -15,5 +15,13 @@
     <string name="watson_answer_title">Answer:</string>
     <string name="title_activity_user_profile_page">UserProfilePage</string>
     <string name="title_activity_detailed_answer_view">DetailedAnswerView</string>
+    <string name="title_activity_market_place">MarketPlace</string>
+    <string name="title_activity_account_page">AccountPage</string>
+    <string name="title_activity_search_history_page">SearchHistoryPage</string>
+    <string name="drawer_open">SustArch_open</string>
+    <string name="drawer_close">SustArch_close</string>
+
+
+
 
 </resources>

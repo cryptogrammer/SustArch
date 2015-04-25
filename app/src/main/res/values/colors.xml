@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="backgroundColor">#f1c40f</color>
+    <color name="backgroundColor">#f0f0f0</color>
     <color name="statusBarColor">#2c3e50</color>
     <color name="navigationBarColor">#2c3e50</color>
-    <color name="actionBarColor">#dcb422</color>
-
+    <color name="actionBarColor">#f0f0f0</color>
+    <color name="textColor">#2c3e50</color>
+    <color name="loginButtonBackground">#6b7784</color>
 
 
 </resources>

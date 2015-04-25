@@ -20,7 +20,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:padding="10dp"
-        android:textColor="#ff000000"
+        android:textColor="@color/textColor"
         android:background="#ffffffff"
         android:layout_centerVertical="true"/>
 
@@ -33,7 +33,8 @@
         android:background="@null"
         android:layout_below="@+id/watsonQueryField"
         android:layout_alignEnd="@+id/watsonLogo"
-        android:layout_marginTop="30dp" />
+        android:layout_marginTop="30dp"
+        android:textColor="@color/textColor"/>
 
     <ImageView
         android:layout_width="100dp"
